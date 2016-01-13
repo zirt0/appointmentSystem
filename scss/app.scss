@@ -2,7 +2,7 @@
 @import "foundation";
 
 // Or selectively include components
-// @import
+@import
 //   "foundation/components/accordion",
 //   "foundation/components/alert-boxes",
 //   "foundation/components/block-grid",
@@ -18,7 +18,7 @@
 //   "foundation/components/inline-lists",
 //   "foundation/components/joyride",
 //   "foundation/components/keystrokes",
-//   "foundation/components/labels",
+"foundation/components/labels";
 //   "foundation/components/magellan",
 //   "foundation/components/orbit",
 //   "foundation/components/pagination",
@@ -38,3 +38,22 @@
 //   "foundation/components/type",
 //   "foundation/components/offcanvas",
 //   "foundation/components/visibility";
+
+.time span.label, .time .timebutton {
+	display: block;
+	height: 30px;
+	margin-bottom: 1px;
+	text-align: center;
+}
+
+.time .timebutton {
+	background-color: #DDDDDD;
+	border-radius: 10px;
+
+
+}
+
+.time a.timebutton:hover {
+    background: #DCEDC8;
+    color: #000;
+}
