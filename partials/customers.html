@@ -1,0 +1,23 @@
+<div ng-init="customers = [
+  {name:'Adem'},
+  {name:'Sulo'},
+  {name:'Busra'},
+  {name:'Mihrali'},
+  {name:'Ayse'},
+  {name:'Fatma'},
+  {name:'Feyza'},
+  {name:'Mahmut'},
+  {name:'Guddusi'},
+  {name:'Haydar'}
+]">
+  Zoeken:
+  <input type="search" ng-model="q" placeholder="Zoeken...." />
+  <ul>
+    <li class="animate-repeat" ng-repeat="customers in customers | filter:q as results">
+      <strong>Naam:</strong>{{customers.name}} 
+    </li>
+    <li class="animate-repeat" ng-if="results.length == 0">
+      <strong>Geen resultaten gevonden</strong>
+    </li>
+  </ul>
+</div>

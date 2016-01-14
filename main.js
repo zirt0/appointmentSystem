@@ -5,7 +5,16 @@
 		$routeProvider
 		.when('/',{
 			templateUrl:'partials/index.html',
-			controller:'dashboard'
+			controller:'dashboardCtrl'
+		})
+		.when('/customers',{
+			templateUrl: 'partials/customers.html',
+			controller: 'customersCtrl'
+		})
+
+		.when('/login',{
+			templateUrl: 'partials/login.html',
+			controller: 'loginCtrl'
 		})
 
 		.otherwise({
@@ -13,7 +22,15 @@
 		});
 	});
 
-	app.controller('dashboard', function($scope){
+	app.controller('dashboardCtrl', function($scope){
+		
+		$scope.timeSelected = function(time){
+			alert("je hebt me geklikt" + time);
+
+			//hier moet de tijd in de database geschreven 
+		}
+
+
 		function getNearestHalfHourTimeString() {
 			var now = new Date();
 			var hour = now.getHours();
@@ -44,4 +61,29 @@
 		console.log(getNearestHalfHourTimeString());
 
 
+	});
+
+
+	app.controller('customersCtrl', function($scope){
+		$scope.sulo = "gekke gozer";
+	});
+	
+	app.controller('loginCtrl', function($scope){
+		var correctUsername = "sulo";
+		var correctPassword = "karlik"
+		console.log("je hebt me geklikt");
+
+		$scope.submitLogin = function(){
+			console.log("je hebt me geklikt" + $scope.username);
+
+			if(correctPassword == $scope.userpassword){
+				console.log("Hoerraaa");
+			}else{
+				alert("Verkeerd wachtwoord of gebruikersnaam");
+			}
+
+
+			//allert
+
+		}
 	});
