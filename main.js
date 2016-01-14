@@ -22,6 +22,13 @@
 		});
 	});
 
+	app.run(function($rootScope) {
+
+		$rootScope.loggedIn = false;
+
+	}
+
+
 	app.controller('dashboardCtrl', function($scope){
 		
 		$scope.timeSelected = function(time){
@@ -68,7 +75,7 @@
 		$scope.sulo = "gekke gozer";
 	});
 	
-	app.controller('loginCtrl', function($scope){
+	app.controller('loginCtrl', function($scope, $rootScope){
 		var correctUsername = "sulo";
 		var correctPassword = "karlik"
 		console.log("je hebt me geklikt");
@@ -76,11 +83,14 @@
 		$scope.submitLogin = function(){
 			console.log("je hebt me geklikt" + $scope.username);
 
-
 			//wanneer gebruikersnaam en wachtwoord true zijn, zeg dan hoera anders Alert!
 			if(correctPassword == $scope.userpassword && correctUsername == $scope.username){
+				
 				console.log("Hoerraaa");
+				$rootScope.loggedIn = true;
+
 			}else{
+				
 				alert("Verkeerd wachtwoord of gebruikersnaam");
 			}
 
