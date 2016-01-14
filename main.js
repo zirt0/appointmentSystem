@@ -76,7 +76,9 @@
 		$scope.submitLogin = function(){
 			console.log("je hebt me geklikt" + $scope.username);
 
-			if(correctPassword == $scope.userpassword){
+
+			//wanneer gebruikersnaam en wachtwoord true zijn, zeg dan hoera anders Alert!
+			if(correctPassword == $scope.userpassword && correctUsername == $scope.username){
 				console.log("Hoerraaa");
 			}else{
 				alert("Verkeerd wachtwoord of gebruikersnaam");
