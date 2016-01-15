@@ -17,6 +17,11 @@
 			controller: 'loginCtrl'
 		})
 
+		.when('/test',{
+			templateUrl: 'partials/test.html',
+			controller: 'testCtrl'
+		})
+
 		.otherwise({
 			redirectTo:'/dashboard'
 		});

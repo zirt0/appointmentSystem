@@ -1,38 +1,45 @@
 
-  </style>
-  <div ng-init="customers = [
-  {name:'Adem', email:'ak@gmail.com', telefoonnummer:'06813231412'},
-  {name:'Sulo'},
-  {name:'Busra'},
-  {name:'Mihrali'},
-  {name:'Ayse'},
-  {name:'Fatma'},
-  {name:'Feyza'},
-  {name:'Mahmut'},
-  {name:'Guddusi'},
-  {name:'Haydar'}
-  ]">
-  Zoeken:
+  
+  <body> 
+  <div class="searchbar">Zoeken:
   <input type="search" ng-model="q" placeholder="Zoeken...." />
-  <table border="10">
-  <col width="225">
-   <col width="225">
-   <col width="225">
-   <col width="100">
-  <tr>
-  <th>Naam</th>
-  <th>email</th>
-  <th>telefoonnummer</th>
-  <th>Edit</th>
-  </thead>
-  </tr>
-  <body>
-  <tr class="animate-repeat" ng-repeat="customers in customers | filter:q as results">
-  <td>{{customers.name}}</td><td>{{customers.email}}</td><td>{{customers.telefoonnummer}}</td>
-  </tr>
-  <tr class="animate-repeat" ng-if="results.length == 0">
-  <td><strong>Geen resultaten gevonden</strong></td>
-  </tr>
-  </body>
+  </div>
+
+  <table>
+    <col width="225">
+    <col width="225">
+    <col width="225">
+    <col width="100">
+     
+      <tr>
+        <div class="name"><th>Naam</th> </div>
+        <div class="email"><th>email</th> </div>
+        <div class="telefoonnummer"><th>telefoonnummer</th> </div>
+        <th>Edit</th>
+      </tr>
+
+      <tr class="animate-repeat" ng-repeat="customers in customers | filter:q as results">
+        <td>{{customers.name}}</td>
+        <td>{{customers.email}}</td>
+        <td>{{customers.telefoonnummer}}</td>
+      </tr>
+    
+    <div ng-init="customers = [
+    {name:'Adem', email:'ak@gmail.com', telefoonnummer:'06813231412'},
+    {name:'Sulo'},
+    {name:'Busra'},
+    {name:'Mihrali'},
+    {name:'Ayse'},
+    {name:'Fatma'},
+    {name:'Feyza'},
+    {name:'Mahmut'},
+    {name:'Guddusi'},
+    {name:'Haydar'}
+    ]">
+
+    <tr class="animate-repeat" ng-if="results.length == 0">
+      <td><strong>Geen resultaten gevonden</strong></td>
+    </tr>
   </table>
   </div>
+</body>  
