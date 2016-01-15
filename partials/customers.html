@@ -1,5 +1,7 @@
-<div ng-init="customers = [
-  {name:'Adem'},
+
+  </style>
+  <div ng-init="customers = [
+  {name:'Adem', email:'ak@gmail.com', telefoonnummer:'06813231412'},
   {name:'Sulo'},
   {name:'Busra'},
   {name:'Mihrali'},
@@ -9,15 +11,28 @@
   {name:'Mahmut'},
   {name:'Guddusi'},
   {name:'Haydar'}
-]">
+  ]">
   Zoeken:
   <input type="search" ng-model="q" placeholder="Zoeken...." />
-  <ul>
-    <li class="animate-repeat" ng-repeat="customers in customers | filter:q as results">
-      <strong>Naam:</strong>{{customers.name}} 
-    </li>
-    <li class="animate-repeat" ng-if="results.length == 0">
-      <strong>Geen resultaten gevonden</strong>
-    </li>
-  </ul>
-</div>
+  <table border="10">
+  <col width="225">
+   <col width="225">
+   <col width="225">
+   <col width="100">
+  <tr>
+  <th>Naam</th>
+  <th>email</th>
+  <th>telefoonnummer</th>
+  <th>Edit</th>
+  </thead>
+  </tr>
+  <body>
+  <tr class="animate-repeat" ng-repeat="customers in customers | filter:q as results">
+  <td>{{customers.name}}</td><td>{{customers.email}}</td><td>{{customers.telefoonnummer}}</td>
+  </tr>
+  <tr class="animate-repeat" ng-if="results.length == 0">
+  <td><strong>Geen resultaten gevonden</strong></td>
+  </tr>
+  </body>
+  </table>
+  </div>

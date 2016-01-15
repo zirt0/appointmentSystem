@@ -22,11 +22,11 @@
 		});
 	});
 
-	app.run(function($rootScope) {
+	app.run (function($rootScope) {
 
 		$rootScope.loggedIn = false;
 
-	}
+	})
 
 
 	app.controller('dashboardCtrl', function($scope){
