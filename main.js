@@ -31,7 +31,11 @@
 
 		$rootScope.loggedIn = false;
 
+<<<<<<< Updated upstream
 	})
+=======
+	});
+>>>>>>> Stashed changes
 
 
 	app.controller('dashboardCtrl', function($scope){
@@ -70,10 +74,54 @@
 			return(hour + ":" + minutes + " " + ampm);
 		}
 
+		function getDaysWeek(){
+
+			var year = 2016;
+			var month = 1;
+			var week = 3;
+
+			var firstDateOfMonth = new Date(year, month - 1, 1); // Date: year-month-01
+
+			var firstDayOfMonth = firstDateOfMonth.getDay();     // 0 (Sun) to 6 (Sat)
+
+			var firstDateOfWeek = new Date(firstDateOfMonth);    // copy firstDateOfMonth
+
+			firstDateOfWeek.setDate(                             // move the Date object
+			    firstDateOfWeek.getDate() +                      // forward by the number of
+			    (firstDayOfMonth ? 7 - firstDayOfMonth : 0)      // days needed to go to
+			);                                                   // Sunday, if necessary
+
+			firstDateOfWeek.setDate(                             // move the Date object
+			    firstDateOfWeek.getDate() +                      // forward by the number of
+			    7 * (week - 1)                                   // weeks required (week - 1)
+			    );
+
+			var dateNumbersOfMonthOnWeek = [];                   // output array of date #s
+			var datesOfMonthOnWeek = [];                         // output array of Dates
+
+			for (var i = 0; i < 7; i++) {                        // for seven days...
+
+			    dateNumbersOfMonthOnWeek.push(                   // push the date number on
+			        firstDateOfWeek.getDate());                  // the end of the array
+
+			    datesOfMonthOnWeek.push(                         // push the date object on
+			        new Date(+firstDateOfWeek));                 // the end of the array
+
+			    firstDateOfWeek.setDate(
+			        firstDateOfWeek.getDate() + 1);              // move to the next day
+
+			}
+
+			console.log(dateNumbersOfMonthOnWeek);
+			console.log(datesOfMonthOnWeek);
+		}
+
+		console.log(getDaysWeek());
+
 		console.log(getNearestHalfHourTimeString());
 
 
-	});
+});
 
 
 	app.controller('customersCtrl', function($scope){
